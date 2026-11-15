@@ -7,6 +7,7 @@ Tested up to: 7.1.4
 Requires PHP: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Stable tag: 2.12
 
 Instantly improve LearnDash's design -- focus mode, course content, profile page, course navigation & course grid -- to more closely match your WordPress theme, and improve LearnDash styles.
 
