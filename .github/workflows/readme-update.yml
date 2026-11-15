@@ -11,7 +11,7 @@ jobs:
     name: Push readme to WordPress.org
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: WordPress.org Plugin Readme/Assets Update
       uses: 10up/action-wordpress-plugin-asset-update@stable
       env:
