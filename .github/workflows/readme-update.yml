@@ -1,0 +1,20 @@
+name: Deploy readme to WordPress.org
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'readme.txt'
+      - 'assets/**'
+jobs:
+  deploy:
+    name: Push readme to WordPress.org
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: WordPress.org Plugin Readme/Assets Update
+      uses: 10up/action-wordpress-plugin-asset-update@stable
+      env:
+        SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+        SLUG: design-upgrade-learndash
