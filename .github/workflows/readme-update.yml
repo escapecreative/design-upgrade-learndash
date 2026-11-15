@@ -5,7 +5,6 @@ on:
       - master
     paths:
       - 'readme.txt'
-      - 'assets/**'
 jobs:
   deploy:
     name: Push readme to WordPress.org
@@ -18,3 +17,4 @@ jobs:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
         SLUG: design-upgrade-learndash
+        ASSETS_DIR: assets
