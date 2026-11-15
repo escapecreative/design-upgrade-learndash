@@ -10,11 +10,19 @@ jobs:
     name: Push readme to WordPress.org
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
-    - name: WordPress.org Plugin Readme/Assets Update
-      uses: 10up/action-wordpress-plugin-asset-update@stable
-      env:
-        SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-        SLUG: design-upgrade-learndash
-        ASSETS_DIR: wp-assets
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v5
+
+      - name: Install Subversion
+        run: sudo apt-get update && sudo apt-get install -y subversion
+
+      - name: Commit readme.txt to WordPress.org SVN
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+        run: |
+          svn checkout --depth=files https://plugins.svn.wordpress.org/design-upgrade-learndash/trunk svn-trunk
+          cp readme.txt svn-trunk/readme.txt
+          cd svn-trunk
+          svn diff
+          svn commit -m "Update readme.txt via GitHub" --username "$SVN_USERNAME" --password "$SVN_PASSWORD" --non-interactive --no-auth-cache
