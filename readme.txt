@@ -1,6 +1,5 @@
 === Design Upgrade for LearnDash ===
 Contributors: escapecreative, davewarfel
-Donate link: https://www.paypal.me/escapecreative/10
 Tags: learndash, lms, learning management system, online courses, css
 Requires at least: 4.6
 Tested up to: 7.1.4
