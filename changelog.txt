@@ -1,5 +1,67 @@
 == Changelog ==
 
+= 2.12 - August 9, 2022 =
+
+- Added: Improved styles for new LearnDash registration process/page
+- Tweak: Increased size of prev/next buttons at the bottom of lesson/topic pages to prevent wrapping onto two lines
+
+= 2.11.1 - July 6, 2022 =
+
+- Fix: Course Grid: "Legacy" active template only: No longer hiding course short description.
+
+= 2.11 - April 13, 2022 =
+
+- Updated: CSS changes to accommodate the course grid CSS changes LearnDash made in 2.0.5 of the Course Grid plugin (mostly with ribbons)
+- Updated: Course Page: Content & Materials tabs: Added CSS to override default theme styles that were adding button styles to the tabs
+
+= 2.10.3 - Jan 22, 2022 =
+
+- Fixed: Small CSS issue with Focus Mode background color in Pro version when using the Kadence theme
+
+= 2.10.2 - Oct 6, 2021 =
+
+- Fixed: MathJax: Removed extra spacing when using LaTeX in quiz answers for single & multiple choice questions
+
+= 2.10.1 - Oct 6, 2021 =
+
+- Fixed: Achievements Add-On: Image size now works again with Achievements version 1.1.0 (available in Pro)
+
+= 2.10 - Aug 5, 2021 =
+
+- New: Achievements Add-On: Small update to CSS to allow for customizations in Pro version
+
+= 2.9 - June 4, 2021 =
+
+- Update: Compatibility with WisdmLabs Group Registration (version 4.2)
+- Update: Compatibility with WisdmLabs Ratings, Reviews & Feedback (version 2.1)
+- Fixed: Mobile: Focus Mode: Clickable area of "Mark Complete" button in header
+- Tweak: Course Content List: Adjusted background color of drip content message
+
+= 2.8.3 - April 11, 2021 =
+
+- Fixed: Login Modal: Text color for "Lost Your Password?" link
+
+= 2.8.2 - February 20, 2021 =
+
+- Tweak: Uncanny Toolkit: Enhanced Course Grid: "View Course Outline" buttons improved with better styling & default LearnDash colors
+
+= 2.8.1 - February 10, 2021 =
+
+- Added: Improved styles for LearnDash pagination
+- Fixed: Focus Mode Header: Mobile navigation buttons spacing issue
+- Fixed: Focus Mode Header: Mobile navigation font size issue
+- Fixed: Quizzes: Not honoring custom LearnDash colors for "review" and "answered" in the review box
+- Fixed: Quizzes: Removed extra blue outline on current questions in the review box
+- Tweak: Quizzes: Adjusted colors for answered, review, correct & incorrect labels in the review box (to match new LearnDash default colors)
+- Tweak: Small change to allow all HTML tags to display properly in the course grid short description (compatibility with Course Grid add-on v1.7)
+
+= 2.8 - January 26, 2021 =
+
+- New: Improved styles for print
+- Fixed: RTL: A few small spacing & alignment issues
+- Fixed: Group Courses List: a small spacing issue
+- Tweak: Increased indentation for topics & quizzes in focus mode navigation & course content lists
+
 = 2.7.1 - October 11, 2020 =
 
 - Tweak: Focus Mode: Slightly reduced font size in sidebar navigation
