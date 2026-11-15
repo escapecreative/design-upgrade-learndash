@@ -12,7 +12,7 @@ Instantly improve LearnDash's design -- focus mode, course content, profile page
 
 == Description ==
 
-LearnDash is a powerful learning management system (LMS) for managing your online courses, but there are some areas where the design falls short. In order to provide your students with an exceptional learning experience, you need a professional design.
+LearnDash is a powerful learning management system (LMS) for managing your online courses, but there are some areas where the design falls short. In order to provide your students with an exceptional learning experience, you need a professional design. 
 
 ### Enter Design Upgrade for LearnDash
 
