@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Design Upgrade for LearnDash
  * Description:       Instantly improve LearnDash's design &ndash; font sizes, spacing, course content, profile page, focus mode, course navigation widget, etc. &ndash; to more closely match your WordPress theme. Upgrade to the <a href="https://escapecreative.com/products/design-upgrade-learndash/?utm_source=wp-admin&utm_medium=free%20plugin&utm_campaign=plugins%20page"><strong>pro version</strong></a> to customize over 100 LearnDash elements.
- * Version:           2.12
+ * Version:           2.12.1
  * Author:            Escape Creative
  * Author URI:        https://escapecreative.com/
  * License:           GPLv3
