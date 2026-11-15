@@ -3,7 +3,7 @@ Contributors: escapecreative, davewarfel
 Donate link: https://www.paypal.me/escapecreative/10
 Tags: learndash, lms, learning management system, online courses, css
 Requires at least: 4.6
-Tested up to: 5.5
+Tested up to: 6.0
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -26,28 +26,28 @@ See below for a list of what's new.
 
 ### Features
 
-**LearnDash 3.x Features**
+Tested with LearnDash 4.3.0.2
 
-Tested with LearnDash 3.2.2
-
-* **NEW:** Major design improvements for WisdmLabs' LearnDash Group Registration plugin
-* **Focus Mode:** Improved styles for Focus Mode comments, which were added in LearnDash 3.1
+* **NEW:** Improved styles for the new LearnDash registration process/page
 * **Global:** Larger clickable areas for all course content, navigation & Focus Mode areas
 * **Buttons:** All buttons have matching rounded corners & increased font size
 * **Font Sizes:** These will now be inherited from your theme, which should increase your font sizes across the board
 * **Focus Mode:** Improved sidebar tray design, Course Sections, shadow added to mobile menu, collapse arrow flips to show current menu state, and more.
 * **Focus Mode:** Top navigation bar received several small improvements
+* **Focus Mode:** Improved styles for Focus Mode comments, which were added in LearnDash 3.1
 * **Animations:** Subtle animations for LearnDash tooltips & the Focus Mode top menu
 * **Profile:** Several styles were improved & standardized
 * **Login/Registration:** Unified styles for all form fields
 * **Course Grid:** Equal height columns & other small tweaks
 * **WisdmLabs Ratings, Reviews & Feedback** design upgrades
+* Design improvements for WisdmLabs' LearnDash Group Registration plugin
+* Improved print styles
 
 **Also:** Small tweaks were made to assignments, pagination, the "User Status" widget and more.
 
 **LearnDash 2.x "Legacy" Features**
 
-Tested with LearnDash 2.6.6
+Tested with LearnDash 2.6.6. **We no longer support these features and highly recommend using the LearnDash 3.0 active template.**
 
 * Much improved course grid styles, equal height cards & no more weird spacing issues 👍
 * All fonts have been reset to use your theme's default font family, size & color
@@ -81,6 +81,7 @@ https://www.youtube.com/watch?v=hOUToX87U9E
 
 #### Pro Features
 
+* **Achievements Add-On:** 10 new customization options
 * Show/Hide various course & profile features
 * Disable expand/collapse links & show all by default
 * **Course Content Lists:** Update background & text colors, hover effects, customize line separators, remove the list count numbers and more
@@ -94,7 +95,7 @@ https://www.youtube.com/watch?v=hOUToX87U9E
 * **Alerts:** 9 custom colors, plus a few other options
 * **Tooltips:** customize the background & text color
 * **Uncanny Groups:** buttons, border radius & improved styles are applied to many Uncanny Groups frontend elements
-* **Tin Canny Reporting:** 12+ design options for Tin Canny reports on the front-end
+* **Tin Canny Reporting:** 12 design options for Tin Canny reports on the front-end
 
 **[Upgrade to Pro Today »](https://escapecreative.com/products/design-upgrade-learndash/?utm_source=wordpress.org&utm_medium=free%20plugin&utm_campaign=readme)**
 
@@ -114,7 +115,6 @@ We have tested with the following themes, and they all appear **to be compatible
 * Edufire
 * Neve
 * OceanWP
-* Storefront
 
 #### Incompatible Themes
 
@@ -172,6 +172,7 @@ As LearnDash adds new features, it is our goal to keep this plugin updated.
 
 Features planned for future release:
 
+* New features for the Quiz Reporting Extension by WisdmLabs
 * Compatibility with more Uncanny LearnDash Toolkit modules
 
 #### We'd love to hear from you!
@@ -262,6 +263,68 @@ We designed this plugin to be flexible so that it takes on many of the character
 5. Simplified & cleaned up the `[ld_profile]` shortcode/block
 
 == Changelog ==
+
+= 2.12 - August 9, 2022 =
+
+- Added: Improved styles for new LearnDash registration process/page
+- Tweak: Increased size of prev/next buttons at the bottom of lesson/topic pages to prevent wrapping onto two lines
+
+= 2.11.1 - July 6, 2022 =
+
+- Fix: Course Grid: "Legacy" active template only: No longer hiding course short description.
+
+= 2.11 - April 13, 2022 =
+
+- Updated: CSS changes to accomodate the course grid CSS changes LearnDash made in 2.0.5 of the Course Grid plugin (mostly with ribbons)
+- Updated: Course Page: Content & Materials tabs: Added CSS to override default theme styles that were adding button styles to the tabs
+
+= 2.10.3 - Jan 22, 2022 =
+
+- Fixed: Small CSS issue with Focus Mode background color in Pro version when using the Kadence theme
+
+= 2.10.2 - Oct 6, 2021 =
+
+- Fixed: MathJax: Removed extra spacing when using LaTeX in quiz answers for single & multiple choice questions
+
+= 2.10.1 - Oct 6, 2021 =
+
+- Fixed: Achievements Add-On: Image size now works again with Achievements version 1.1.0 (available in Pro)
+
+= 2.10 - Aug 5, 2021 =
+
+- New: Achievements Add-On: Small update to CSS to allow for customizations in Pro version
+
+= 2.9 - June 4, 2021 =
+
+- Update: Compatibility with WisdmLabs Group Registration (version 4.2)
+- Update: Compatibility with WisdmLabs Ratings, Reviews & Feedback (version 2.1)
+- Fixed: Mobile: Focus Mode: Clickable area of "Mark Complete" button in header
+- Tweak: Course Content List: Adjusted background color of drip content message
+
+= 2.8.3 - April 11, 2021 =
+
+- Fixed: Login Modal: Text color for "Lost Your Password?" link
+
+= 2.8.2 - February 20, 2021 =
+
+- Tweak: Uncanny Toolkit: Enhanced Course Grid: "View Course Outline" buttons improved with better styling & default LearnDash colors
+
+= 2.8.1 - February 10, 2021 =
+
+- Added: Improved styles for LearnDash pagination
+- Fixed: Focus Mode Header: Mobile navigation buttons spacing issue
+- Fixed: Focus Mode Header: Mobile navigation font size issue
+- Fixed: Quizzes: Not honoring custom LearnDash colors for "review" and "answered" in the review box
+- Fixed: Quizzes: Removed extra blue outline on current questions in the review box
+- Tweak: Quizzes: Adjusted colors for answered, review, correct & incorrect labels in the review box (to match new LearnDash default colors)
+- Tweak: Small change to allow all HTML tags to display properly in the course grid short description (compatibility with Course Grid add-on v1.7)
+
+= 2.8 - January 26, 2021 =
+
+- New: Improved styles for print
+- Fixed: RTL: A few small spacing & alignment issues
+- Fixed: Group Courses List: a small spacing issue
+- Tweak: Increased indentation for topics & quizzes in focus mode navigation & course content lists
 
 = 2.7.1 - October 11, 2020 =
 
