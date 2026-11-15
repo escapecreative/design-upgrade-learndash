@@ -1,0 +1,50 @@
+name: Deploy full plugin release to WordPress.org
+on:
+  release:
+    types: [published]
+jobs:
+  deploy:
+    name: Push release to WordPress.org SVN
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v5
+
+      - name: Install Subversion
+        run: sudo apt-get update && sudo apt-get install -y subversion
+
+      - name: Deploy trunk and create version tag on WordPress.org
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          TAG_NAME: ${{ github.ref_name }}
+        run: |
+          # Strip leading 'v' if your GitHub release tag is v2.12.1 instead of 2.12.1
+          VERSION=${TAG_NAME#v}
+          echo "Deploying version: $VERSION"
+
+          # Checkout full SVN repository (trunk + tags)
+          svn checkout --depth=immediates https://plugins.svn.wordpress.org/design-upgrade-learndash svn-repo
+          svn update --set-depth=infinity svn-repo/trunk
+
+          # Sync GitHub files into SVN trunk (excluding GitHub-only files)
+          rsync -rc --delete \
+            --exclude='.git*' \
+            --exclude='README.md' \
+            --exclude='changelog.txt' \
+            --exclude='license.txt' \
+            ./ svn-repo/trunk/
+
+          cd svn-repo
+
+          # Stage any added or deleted files in trunk
+          svn status | grep '^\?' | awk '{print $2}' | xargs -r svn add
+          svn status | grep '^\!' | awk '{print $2}' | xargs -r svn delete
+
+          # Commit updated trunk
+          svn commit -m "Update trunk to version $VERSION" --username "$SVN_USERNAME" --password "$SVN_PASSWORD" --non-interactive --no-auth-cache
+
+          # Copy trunk to the new version tag folder on WordPress.org
+          svn copy https://plugins.svn.wordpress.org/design-upgrade-learndash/trunk \
+                   https://plugins.svn.wordpress.org/design-upgrade-learndash/tags/$VERSION \
+                   -m "Tagging version $VERSION" --username "$SVN_USERNAME" --password "$SVN_PASSWORD" --non-interactive --no-auth-cache
