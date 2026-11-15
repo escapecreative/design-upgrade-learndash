@@ -19,13 +19,12 @@ jobs:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           TAG_NAME: ${{ github.ref_name }}
         run: |
-          # Strip leading 'v' if your GitHub release tag is v2.12.1 instead of 2.12.1
           VERSION=${TAG_NAME#v}
           echo "Deploying version: $VERSION"
 
-          # Checkout full SVN repository (trunk + tags)
-          svn checkout --depth=immediates https://plugins.svn.wordpress.org/design-upgrade-learndash svn-repo
-          svn update --set-depth=infinity svn-repo/trunk
+          # Checkout SVN outside the workspace so rsync cannot copy it into itself
+          svn checkout --depth=immediates https://plugins.svn.wordpress.org/design-upgrade-learndash /tmp/svn-repo
+          svn update --set-depth=infinity /tmp/svn-repo/trunk
 
           # Sync GitHub files into SVN trunk (excluding GitHub-only files)
           rsync -rc --delete \
@@ -33,12 +32,12 @@ jobs:
             --exclude='README.md' \
             --exclude='changelog.txt' \
             --exclude='license.txt' \
-            ./ svn-repo/trunk/
+            ./ /tmp/svn-repo/trunk/
 
-          cd svn-repo
+          cd /tmp/svn-repo
 
           # Stage any added or deleted files in trunk
-          svn status | grep '^\?' | awk '{print $2}' | xargs -r svn add
+          svn status | grep '^\?' | awk '{print $2}' | xargs -r svn add --force
           svn status | grep '^\!' | awk '{print $2}' | xargs -r svn delete
 
           # Commit updated trunk
