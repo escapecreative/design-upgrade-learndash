@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'LDX_DESIGN_UPGRADE_LEARNDASH_VERSION', '2.12' );
+define( 'LDX_DESIGN_UPGRADE_LEARNDASH_VERSION', '2.12.1' );
 
 /**
  * Define Constants
@@ -74,7 +74,7 @@ function ldx_design_upgrade_learndash_enqueue_css() {
 	} else {
 
 		// Add stylesheet for "LearnDash 3.0" template
-		wp_enqueue_style( 'ldx-design-upgrade-learndash', plugins_url( 'assets/css/ld3.css', __FILE__ ), array( 'learndash_quiz_front_css', 'learndash-front' ), '2.12' );
+		wp_enqueue_style( 'ldx-design-upgrade-learndash', plugins_url( 'assets/css/ld3.css', __FILE__ ), array( 'learndash_quiz_front_css', 'learndash-front' ), '2.12.1' );
 
 	} // endif
 
